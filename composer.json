@@ -1,0 +1,23 @@
+{
+  "require": {
+    "behat/behat": "^3.10.0",
+    "facebook/webdriver": "dev-master",
+    "appium/php-client": "dev-master",
+    "symfony/yaml": "*"
+  },
+  "config": {
+      "bin-dir": "bin/"
+  },
+  "scripts": {
+    "test": "composer single  && composer parallel",
+    "androidsingle": "./bin/behat --config=config/androidsingle.conf.yml",
+    "iossingle":"./bin/behat --config=config/iossingle.conf.yml",
+    "parallelandroid": "CONFIG_FILE=config/parallelandroid.conf.yml /usr/bin/env php exec-parallel.php",
+    "parallelios": "CONFIG_FILE=config/parallelios.conf.yml /usr/bin/env php exec-parallel.php"
+
+  },
+  "autoload": {
+    "classmap": ["lib/"]
+  }
+}
+

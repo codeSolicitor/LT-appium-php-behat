@@ -1,0 +1,24 @@
+default:
+    autoload:
+        '': '%paths.base%/../features/bootstrap'
+    suites:
+        default:
+            paths: [ '%paths.base%/../features' ]
+            contexts:
+             - FeatureContext:
+                    parameters:
+                        server: "mobile-hub.lambdatest.com"
+                       user: "YOUR USERNAME HERE"       #Add LambdaTest username here 
+                        key: "YOUR ACCESS KEY HERE"      #Add LambdaTest accessKey here
+                        capabilities:
+                            build: "behat-appium-ios"
+                            name: "single-behat-test"
+                            isRealMobile: true
+                            app: "lt://proverbial-ios"    #Add app url here
+                        environments:
+                            -
+                                deviceName: iPhone 11
+                                platform: ios
+                                platformVersion: 14
+
+

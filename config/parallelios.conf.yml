@@ -1,0 +1,37 @@
+default:
+    autoload:
+        '': '%paths.base%/../features/bootstrap'
+    suites:
+        default:
+            paths: [ '%paths.base%/../features' ]
+            contexts:
+                - FeatureContext:
+                    parameters:
+                        server: "mobile-hub.lambdatest.com"
+                        user: "YOUR USERNAME HERE"       #Add LambdaTest username here 
+                        key: "YOUR ACCESS KEY HERE"      #Add LambdaTest accessKey here
+                        capabilities:
+                            # common capabilities added for every test
+                            build: "behat-parallel-ios"
+                            name: "parallel-behat-test"
+                            isRealMobile: true
+                            app: "lt://proverbial-ios"     #Add app url here
+                        environments:
+                            # each capability in this list is execute as single test
+                            # so to run multiple tests in parallel,
+                            # simply define multiple capabilities below and execute the test with
+                            # $ php run-parallel.php -c config/<filename>.yml
+                        -
+                            deviceName: iPhone 11
+                            platform: ios
+                            platformVersion: 13
+                        -
+                            deviceName: iPad Pro 11 (2021)
+                            platform: ios
+                            platformVersion: 14
+                        -
+                            deviceName: iPhone 13 Pro Max
+                            platform: ios
+                            platformVersion: 15
+
+                    

@@ -1,0 +1,24 @@
+default:
+    autoload:
+        '': '%paths.base%/../features/bootstrap'
+    suites:
+        default:
+            paths: [ '%paths.base%/../features' ]
+            contexts:
+             - FeatureContext:
+                    parameters:
+                        server: "mobile-hub.lambdatest.com"
+                        user: "YOUR USERNAME HERE"       #Add LambdaTest username here 
+                        key: "YOUR ACCESS KEY HERE"      #Add LambdaTest accessKey here
+                        capabilities:
+                            build: "behat-appium-android"
+                            name: "single-behat-test"
+                            isRealMobile: true
+                            app: "lt://proverbial-android"   #Add your app url here
+                        environments:
+                            -
+                                deviceName: Galaxy S21 Ultra 5G
+                                platform: Android
+                                platformVersion: 11
+
+
