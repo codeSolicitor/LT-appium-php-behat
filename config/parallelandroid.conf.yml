@@ -1,0 +1,37 @@
+default:
+    autoload:
+        '': '%paths.base%/../features/bootstrap'
+    suites:
+        default:
+            paths: [ '%paths.base%/../features' ]
+            contexts:
+                - FeatureContext:
+                    parameters:
+                        server: "mobile-hub.lambdatest.com"
+                        user: "YOUR USERNAME HERE"       #Add LambdaTest username here 
+                        key: "YOUR ACCESS KEY HERE"      #Add LambdaTest accessKey here
+                        capabilities:
+                            # common capabilities added for every test
+                            build: "behat-parallel-android"
+                            name: "parallel-behat-test"
+                            isRealMobile: true
+                            app: "lt://proverbial-android"    #Add app url here
+                        environments:
+                            # each capability in this list is execute as single test
+                            # so to run multiple tests in parallel,
+                            # simply define multiple capabilities below and execute the test with
+                            # $ php run-parallel.php -c config/<filename>.yml
+                        -
+                            deviceName: Galaxy S21 Ultra 5G
+                            platform: Android
+                            platformVersion: 11
+                        -
+                            deviceName: OnePlus 9 Pro
+                            platform: Android
+                            platformVersion: 11
+                        -
+                            deviceName: Redmi 9
+                            platform: Android
+                            platformVersion: 10
+
+                    
