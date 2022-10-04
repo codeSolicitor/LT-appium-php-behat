@@ -92,6 +92,9 @@ copy C:\ProgramData\ComposerSetup\bin\composer.phar
 
 ```php
 composer update
+php composer.phar require phpwhois/phpwhois
+php composer.phar install
+php composer.phar require php-webdriver/webdriver
 php composer.phar require behat/behat
 ```
 In case of any error, please try restarting.
