@@ -15,7 +15,10 @@
     "androidsingle": "./bin/behat --config=config/androidsingle.conf.yml",
     "iossingle":"./bin/behat --config=config/iossingle.conf.yml",
     "parallelandroid": "CONFIG_FILE=config/parallelandroid.conf.yml /usr/bin/env php exec-parallel.php",
-    "parallelios": "CONFIG_FILE=config/parallelios.conf.yml /usr/bin/env php exec-parallel.php"
+    "parallelios": "CONFIG_FILE=config/parallelios.conf.yml /usr/bin/env php exec-parallel.php",
+    
+    "androidWebSingle": "CONFIG_FILE=config/androidWebSingle.conf.yml /usr/bin/env php exec-web-parallel.php",
+    "iosWebSingle": "CONFIG_FILE=config/iosWebSingle.conf.yml /usr/bin/env php exec-web-parallel.php"
 
   },
   "autoload": {

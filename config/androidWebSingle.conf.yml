@@ -1,0 +1,24 @@
+default:
+    autoload:
+        '': '%paths.base%/../features/bootstrap'
+    suites:
+        default:
+            paths: [ '%paths.base%/../features' ]
+            contexts:
+             - FeatureContext:
+                    parameters:
+                        server: "mobile-hub.lambdatest.com"
+                        user: ${LT_USERNAME}       #Add LambdaTest username here 
+                        key: ${LT_ACCESS_KEY}      #Add LambdaTest accessKey here
+                        capabilities:
+                            build: "behat-appium-android"
+                            name: "single-behat-test"
+                            isRealMobile: true
+                        environments:
+                            -
+                                deviceName: Galaxy .*
+                                platformName: Android
+                                platformVersion: 11
+                                browserName: chrome
+
+
